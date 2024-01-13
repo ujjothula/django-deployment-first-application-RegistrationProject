@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Movies-List</title>
+        <link rel="stylesheet" href="{% static "css/Registration.css"%}">
+    </head>
+    <body>
+        <h1>Registration-List Details..!!</h1>
+        <hr />
+        {%if Registration_list%}
+            <table>
+                <thead>
+                    <th>RegistrationDate</th>
+                    <th>first-Name</th>
+                    <th>last-name</th>
+                    <th>Email</th>
+                    <th>rating</th>
+
+                </thead>
+                <tbody>
+                {%for Registration in Registration_list%}
+                    <tr>
+                        <td>{{Registration.Registrationdate}}</td>
+                        <td>{{Registration.firstname}}</td>
+                        <td>{{Registration.lastname}}</td>
+                        <td>{{Registration.Email}}</td>
+                        <td>{{Registration.rating}}</td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+			<a href="/" >Home-Page</a>
+        {%else%}
+            <p>OOPs...No Registration Found!!</p>
+        {%endif%}
+</body>
+</html>
